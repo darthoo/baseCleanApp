@@ -1,0 +1,79 @@
+allprojects {
+  repositories {
+    jcenter()
+  }
+}
+
+ext {
+  //Libraries
+  daggerVersion = '2.11'
+  butterKnifeVersion = '8.8.1'
+  recyclerViewVersion = '26.1.0'
+  rxJavaVersion = '2.1.3'
+  rxAndroidVersion = '2.0.1'
+  javaxAnnotationVersion = '1.0'
+  javaxInjectVersion = '1'
+  gsonVersion = '2.3.1'
+  okHttpVersion = '2.5.0'
+  androidAnnotationsVersion = '21.0.3'
+  arrowVersion = '1.0.0'
+  lang3Version = '3.1'
+  roomVersion = '1.0.0'
+
+  //Testing
+  jUnitVersion = '4.12'
+
+
+  presentationDependencies = [
+      daggerCompiler:     "com.google.dagger:dagger-compiler:${daggerVersion}",
+      dagger:             "com.google.dagger:dagger:${daggerVersion}",
+      butterKnife:        "com.jakewharton:butterknife:${butterKnifeVersion}",
+      recyclerView:       "com.android.support:recyclerview-v7:${recyclerViewVersion}",
+      rxJava:             "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+      rxAndroid:          "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+      javaxAnnotation:    "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+      lang3:              "org.apache.commons:commons-lang3:${lang3Version}",
+      room:               "android.arch.persistence.room:runtime:${roomVersion}",
+      roomProcessor:      "android.arch.persistence.room:compiler:${roomVersion}"
+  ]
+
+  presentationTestDependencies = [
+
+  ]
+
+  domainDependencies = [
+      javaxAnnotation:    "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+      javaxInject:        "javax.inject:javax.inject:${javaxInjectVersion}",
+      rxJava:             "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+      arrow:              "com.fernandocejas:arrow:${arrowVersion}",
+      lang3:              "org.apache.commons:commons-lang3:${lang3Version}"
+  ]
+
+  domainTestDependencies = [
+      junit:              "junit:junit:${jUnitVersion}",
+  ]
+
+  dataDependencies = [
+      daggerCompiler:     "com.google.dagger:dagger-compiler:${daggerVersion}",
+      dagger:             "com.google.dagger:dagger:${daggerVersion}",
+      gson:               "com.google.code.gson:gson:${gsonVersion}",
+      rxJava:             "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+      rxAndroid:          "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+      javaxAnnotation:    "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+      javaxInject:        "javax.inject:javax.inject:${javaxInjectVersion}",
+      androidAnnotations: "com.android.support:support-annotations:${androidAnnotationsVersion}",
+      lang3:              "org.apache.commons:commons-lang3:${lang3Version}",
+      room:               "android.arch.persistence.room:runtime:${roomVersion}",
+      roomProcessor:      "android.arch.persistence.room:compiler:${roomVersion}",
+      roomTest:           "android.arch.persistence.room:testing:${roomVersion}",
+      roomRx:             "android.arch.persistence.room:rxjava2:${roomVersion}"
+  ]
+
+  dataTestDependencies = [
+      junit:              "junit:junit:${jUnitVersion}",
+  ]
+
+  developmentDependencies = [
+
+  ]
+}
