@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Arentator</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="or_sign_up_with">or signup with</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">Twitter</string>
+    <string name="add_your_profile_picture">Add your profile picture</string>
 </resources>
