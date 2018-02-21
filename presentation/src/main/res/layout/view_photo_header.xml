@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civProfilePic"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/user_avatar"
+        app:civ_border_color="#ffffff"
+        app:civ_border_width="3dp"
+        android:transitionName="@string/user_avatar_transition"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/tvLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ic_message"/>
+</FrameLayout>
