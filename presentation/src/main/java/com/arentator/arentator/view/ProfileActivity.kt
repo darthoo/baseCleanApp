@@ -14,8 +14,8 @@ class ProfileActivity : AppCompatActivity() {
         setContentView(R.layout.activity_profile)
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            photoHeader.translationZ = 6f
-            photoHeader.invalidate()
+            userAvatar.translationZ = 6f
+            userAvatar.invalidate()
         }
 
     }

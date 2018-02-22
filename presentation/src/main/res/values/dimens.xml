@@ -5,4 +5,9 @@
     <dimen name="dp16_space">16dp</dimen>
     <dimen name="dp32_space">32dp</dimen>
     <dimen name="dp64_space">64dp</dimen>
+
+    <!-- dimensions -->
+    <dimen name="image_width">120dp</dimen>
+    <dimen name="image_final_width">32dp</dimen>
+    <dimen name="spacing_normal">16dp</dimen>
 </resources>
