@@ -14,8 +14,8 @@
         <item name="android:windowExitTransition">@transition/transition_explode</item>-->
 
         <!-- specify shared element transitions -->
-        <item name="android:windowSharedElementEnterTransition">@transition/transition_explode</item>
-        <item name="android:windowSharedElementExitTransition">@transition/transition_explode</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/changebounds_with_arc</item>
+        <item name="android:windowSharedElementExitTransition">@transition/changebounds_with_arc</item>
 
     </style>
 
