@@ -16,26 +16,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         card.setOnClickListener{startProfileActivity()}
-
-        window.sharedElementEnterTransition.addListener(object : Transition.TransitionListener{
-            override fun onTransitionEnd(p0: Transition?) {
-                avatar.animate().alpha(1f)
-                roundedImage.animate().alpha(0f)
-            }
-            override fun onTransitionResume(p0: Transition?) {}
-            override fun onTransitionPause(p0: Transition?) {}
-            override fun onTransitionCancel(p0: Transition?) {}
-            override fun onTransitionStart(p0: Transition?) {}
-
-        })
     }
 
     private fun startProfileActivity(){
-        avatar.animate().alpha(0f)
-        roundedImage.animate().alpha(1f)
         val avatarTransition = resources.getString(R.string.rounded_color_view_transition)
         val intent = Intent(this, ProfileActivity::class.java)
-        val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this, roundedImage as View, avatarTransition)
+        val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this, avatar as View, avatarTransition)
         startActivity(intent, options.toBundle())
     }
 }

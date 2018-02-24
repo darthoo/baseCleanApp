@@ -22,19 +22,8 @@
                 android:id="@+id/avatar"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:transitionName="@string/user_avatar_transition"
-                android:src="@drawable/user_avatar"/>
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/roundedImage"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@color/colorPrimary"
-                android:layout_gravity="center"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="16dp"
                 android:transitionName="@string/rounded_color_view_transition"
-                android:alpha="0"/>
+                android:src="@drawable/user_avatar"/>
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/tvUsername"
