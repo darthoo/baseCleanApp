@@ -2,23 +2,22 @@ package com.arentator.arentator.view
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
-import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.transition.Explode
 import android.transition.TransitionInflater
 import com.arentator.arentator.R
-import kotlinx.android.synthetic.main.view_profile.*
-import android.opengl.ETC1.getWidth
-import android.transition.ChangeClipBounds
 import android.transition.Transition
 import android.transition.TransitionSet
 import android.util.Log
+import android.view.MenuItem
 
 import android.view.View
 import android.view.ViewAnimationUtils
 import android.view.animation.AccelerateDecelerateInterpolator
-import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import android.view.animation.OvershootInterpolator
+import kotlinx.android.synthetic.main.activity_profile.*
+import kotlinx.android.synthetic.main.view_contact_details.*
 
 
 class ProfileActivity : AppCompatActivity() {
@@ -27,10 +26,14 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        window.sharedElementEnterTransition.addListener(object :Transition.TransitionListener{
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        window.sharedElementEnterTransition.addListener(object : Transition.TransitionListener {
             override fun onTransitionEnd(p0: Transition?) {
                 reveal()
             }
+
             override fun onTransitionResume(p0: Transition?) {}
             override fun onTransitionPause(p0: Transition?) {}
             override fun onTransitionCancel(p0: Transition?) {}
@@ -49,6 +52,17 @@ class ProfileActivity : AppCompatActivity() {
                 }
         window.sharedElementExitTransition = outSet
         window.sharedElementReturnTransition = outSet
+
+        animateContactDetails()
+
+    }
+
+    private fun animateContactDetails(){
+        val slideFromBottomAnimation = AnimationUtils.loadAnimation(this,R.anim.anim_slide_from_bottom)
+        slideFromBottomAnimation.interpolator = OvershootInterpolator()
+        phoneNumberRoot.startAnimation(slideFromBottomAnimation)
+        emailRoot.startAnimation(slideFromBottomAnimation)
+        aboutMeCard.startAnimation(slideFromBottomAnimation)
     }
 
     private fun hideView() {
@@ -62,7 +76,8 @@ class ProfileActivity : AppCompatActivity() {
                         override fun onAnimationEnd(animation: Animator?) {
                             super.onAnimationEnd(animation)
                             toolbarImage.visibility = View.INVISIBLE
-                        }})
+                        }
+                    })
                     start()
                 }
     }
@@ -78,23 +93,35 @@ class ProfileActivity : AppCompatActivity() {
         toolbarImage.setImageDrawable(resources.getDrawable(R.drawable.user_avatar))
         toolbarImage.visibility = View.VISIBLE
 
-        anim.addListener(object : Animator.AnimatorListener{
+        anim.addListener(object : Animator.AnimatorListener {
             override fun onAnimationEnd(p0: Animator?) {
 
             }
+
             override fun onAnimationRepeat(p0: Animator?) {
-                Log.e("asd","REPEATT"
+                Log.e("asd", "REPEATT"
                 )
             }
+
             override fun onAnimationCancel(p0: Animator?) {}
             override fun onAnimationStart(p0: Animator?) {
                 roundedImage.animate().alpha(0f)
-                Log.e("asd","=== ROUNDED IMAGE GONE ===")}
+                Log.e("asd", "=== ROUNDED IMAGE GONE ===")
+            }
 
         })
         anim.start()
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        item?.let {
+            if (it.itemId == android.R.id.home) {
+                finish()
+                return true
+            }
+        }
 
+        return super.onOptionsItemSelected(item)
     }
 
     fun View.getCenter(): Pair<Float, Float> {

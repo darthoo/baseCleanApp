@@ -7,4 +7,21 @@
         <item name="android:textSize">@dimen/sp16_text</item>
     </style>
 
+    <style name="SingleTextItem">
+        <item name="android:textSize">@dimen/sp16_text</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:padding">@dimen/dp16_space</item>
+        <item name="android:drawablePadding">@dimen/dp16_space</item>
+    </style>
+
+    <style name="HorizontalDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/colorSecondaryText</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:layout_marginStart">@dimen/dp16_space</item>
+        <item name="android:layout_marginEnd">@dimen/dp16_space</item>
+
+    </style>
+
 </resources>
