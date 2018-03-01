@@ -1,4 +1,4 @@
-package com.arentator.arentator.view
+package com.arentator.arentator.view.activity
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter

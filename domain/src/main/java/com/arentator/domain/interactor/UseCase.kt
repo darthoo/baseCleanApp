@@ -13,7 +13,7 @@ import javax.inject.Inject
 /**
  * Created by Nikolay on 18.02.2018.
  */
-abstract class UseCase<TReturnType, TParamsType> internal constructor() {
+abstract class UseCase<TParamsType, TReturnType> internal constructor() {
 
     @Inject lateinit var threadExecutor: ThreadExecutor
     @Inject lateinit var postExecutionThread: PostExecutionThread
