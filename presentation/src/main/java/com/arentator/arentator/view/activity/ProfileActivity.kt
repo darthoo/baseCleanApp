@@ -2,6 +2,8 @@ package com.arentator.arentator.view.activity
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
+import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.transition.TransitionInflater
@@ -16,16 +18,20 @@ import android.view.ViewAnimationUtils
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.AnimationUtils
 import android.view.animation.OvershootInterpolator
+import com.arentator.arentator.UserModel
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.view_contact_details.*
 
 
 class ProfileActivity : AppCompatActivity() {
 
+    private lateinit var user: UserModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
-
+        extractIntentExtraAndShowUser()
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -54,11 +60,27 @@ class ProfileActivity : AppCompatActivity() {
         window.sharedElementReturnTransition = outSet
 
         animateContactDetails()
+    }
+
+    private fun extractIntentExtraAndShowUser() {
+        user = intent.getParcelableExtra(USER)
+        val username = "${user.firstName} ${user.lastName}"
+        collapsingToolbar.title = username
+        user.avatar?.let {
+
+            Glide.with(this)
+                    .load(user.avatar!!)
+                    .into(roundedImage)
+
+            Glide.with(this)
+                    .load(user.avatar!!)
+                    .into(toolbarImage)
+        }
 
     }
 
-    private fun animateContactDetails(){
-        val slideFromBottomAnimation = AnimationUtils.loadAnimation(this,R.anim.anim_slide_from_bottom)
+    private fun animateContactDetails() {
+        val slideFromBottomAnimation = AnimationUtils.loadAnimation(this, R.anim.anim_slide_from_bottom)
         slideFromBottomAnimation.interpolator = OvershootInterpolator()
         phoneNumberRoot.startAnimation(slideFromBottomAnimation)
         emailRoot.startAnimation(slideFromBottomAnimation)
@@ -90,7 +112,6 @@ class ProfileActivity : AppCompatActivity() {
                     duration = 400
                 }
 
-        toolbarImage.setImageDrawable(resources.getDrawable(R.drawable.user_avatar))
         toolbarImage.visibility = View.VISIBLE
 
         anim.addListener(object : Animator.AnimatorListener {
@@ -133,6 +154,16 @@ class ProfileActivity : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         hideView()
+    }
+
+    companion object {
+        const val USER = "user"
+
+        fun getCallingIntent(context: Context, user: UserModel): Intent {
+            val intent = Intent(context, ProfileActivity::class.java)
+            intent.putExtra(USER, user)
+            return intent
+        }
     }
 
 }

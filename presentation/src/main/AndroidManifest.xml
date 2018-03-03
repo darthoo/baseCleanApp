@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.arentator.arentator">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".ArentatorApp"
         android:allowBackup="true"
@@ -18,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.activity.RegisterActivity" />
-        <activity android:name=".view.activity.ProfileActivity"/>
+        <activity android:name=".view.activity.ProfileActivity" />
     </application>
 
 </manifest>

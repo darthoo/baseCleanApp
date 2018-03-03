@@ -7,38 +7,11 @@
     tools:context="com.arentator.arentator.view.activity.MainActivity">
 
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/card"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/userRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/avatar"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:transitionName="@string/rounded_color_view_transition"
-                android:src="@drawable/user_avatar"/>
-
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/tvUsername"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/test_user_name"
-                android:layout_toEndOf="@id/avatar"
-                android:textSize="22sp"
-                android:textColor="#000000"
-                android:transitionName="@string/username_transition"
-                android:layout_centerVertical="true"
-                android:padding="10dp"/>
-        </RelativeLayout>
-
-    </android.support.v7.widget.CardView>
+        android:layout_height="match_parent"
+        android:padding="@dimen/dp8_space"/>
     
 
 </RelativeLayout>
