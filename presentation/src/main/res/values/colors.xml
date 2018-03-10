@@ -4,10 +4,16 @@
     <color name="colorPrimaryDark">#0097A7</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorPrimaryLight">#B2EBF2</color>
+    <color name="colorPrimaryTransparent">#7f00BCD4</color>
+    <color name="colorPrimaryDarkTransparent">#7f0097A7</color>
+
+    <color name="gray">#757575</color>
+    <color name="grayTransparent">#7fBDBDBD</color>
 
     <color name="colorPrimaryText">#212121</color>
     <color name="colorSecondaryText">#757575</color>
 
     <color name="colorDivider">#BDBDBD</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhiteTransparent">#7fFFFFFF</color>
 </resources>

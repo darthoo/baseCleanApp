@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    tools:context="com.arentator.arentator.view.activity.LoginActivity">
+
+    <RelativeLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDarkTransparent"
+        android:paddingEnd="@dimen/dp8_space"
+        android:paddingStart="@dimen/dp8_space">
+
+        <LinearLayout
+            android:id="@+id/logoRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_house" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                style="@style/BigTitle" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/find_the_best_flat_in_town"
+                style="@style/SmallTitle" />
+
+            <View style="@style/HorizontalDivider"
+                android:layout_marginTop="@dimen/dp8_space"
+                android:background="@color/colorWhite"/>
+
+            <RelativeLayout
+                android:id="@+id/tabLayoutRoot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/logoRoot">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/tvOr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp8_space"
+                    android:text="@string/or"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/colorSecondaryText"
+                    style="@style/SmallTitle" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_up"
+                    android:layout_toEndOf="@id/tvOr"
+                    android:layout_margin="@dimen/dp8_space"
+                    style="@style/SmallTitle" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login"
+                    android:layout_margin="@dimen/dp8_space"
+                    android:textColor="@color/colorAccent"
+                    style="@style/SmallTitle"
+                    android:layout_toStartOf="@id/tvOr"
+                    />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/inputsRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logoRoot"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/dp16_space"
+            android:layout_marginStart="@dimen/dp16_space"
+            android:layout_marginTop="@dimen/dp16_space">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/login"
+                style="@style/LoginTextInput">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/loginInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/login"
+                    android:drawableStart="@drawable/ic_profile"
+                    style="@style/LoginEditText"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password"
+                android:layout_marginTop="@dimen/dp16_space"
+                app:passwordToggleEnabled="true"
+                style="@style/LoginTextInput">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/passwordInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_lock"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    style="@style/LoginEditText" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                android:layout_marginTop="@dimen/dp16_space"
+                style="@style/DefaultButton" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

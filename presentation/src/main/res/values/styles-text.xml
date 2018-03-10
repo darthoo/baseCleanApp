@@ -1,0 +1,16 @@
+<resources>
+
+   <style name="BaseTitle">
+       <item name="android:textColor">@color/colorWhite</item>
+      <item name="android:textSize">@dimen/sp24_text</item>
+   </style>
+
+   <style name="BigTitle" parent="BaseTitle">
+      <item name="android:textSize">@dimen/sp32_text</item>
+   </style>
+
+   <style name="SmallTitle" parent="BaseTitle">
+      <item name="android:textSize">@dimen/sp16_text</item>
+   </style>
+
+</resources>
